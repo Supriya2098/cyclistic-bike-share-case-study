@@ -1,0 +1,105 @@
+---
+title: "Cyclistic Bike-Share Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(lubridate)
+library(scales)
+
+# Load cleaned data
+trips <- read_csv("clean/trips_clean.csv")
+
+# Ensure ordered weekdays
+trips$day_of_week <- factor(trips$day_of_week,
+  levels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+)
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+summary_stats <- trips %>%
+group_by(member_casual) %>%
+summarise(avg_ride_min = mean(ride_length))
+
+ggplot(summary_stats, aes(x = member_casual, y = avg_ride_min, fill = member_casual)) +
+geom_col(show.legend = FALSE) +
+geom_text(aes(label = round(avg_ride_min, 1)), vjust = -0.5) +
+labs(
+title = "Average Ride Length by User Type",
+x = "",
+y = "Minutes"
+) +
+theme_minimal(base_size = 14)
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+rides_by_day <- trips %>%
+group_by(member_casual, day_of_week) %>%
+summarise(rides = n(), .groups = "drop")
+
+ggplot(rides_by_day, aes(x = day_of_week, y = rides, fill = member_casual)) +
+geom_col(position = "dodge") +
+labs(
+title = "Rides by Day of Week",
+x = "",
+y = "Number of Rides"
+) +
+theme_minimal(base_size = 14)
+
+```
+
+### Chart C
+
+```{r}
+rides_by_hour <- trips %>%
+group_by(member_casual, hour) %>%
+summarise(rides = n(), .groups = "drop")
+
+ggplot(rides_by_hour, aes(x = hour, y = rides, color = member_casual)) +
+geom_line(size = 1.2) +
+scale_x_continuous(breaks = seq(0, 23, 2)) +
+labs(
+title = "Rides by Hour of Day",
+x = "Hour of Day",
+y = "Number of Rides"
+) +
+theme_minimal(base_size = 14)
+
+```
+
+### Chart D
+
+```{r}
+rides_by_month <- trips %>%
+ mutate(month = factor(month,
+                        levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"))) %>%  
+group_by(member_casual, month) %>%
+summarise(rides = n(), .groups = "drop")
+
+ggplot(rides_by_month, aes(x = month, y = rides, group = member_casual, color = member_casual)) +
+geom_line(size = 1.2) +
+geom_point() +
+labs(
+title = "Monthly Ride Trends",
+x = "Month",
+y = "Number of Rides"
+) +
+theme_minimal(base_size = 14)
+
+```
