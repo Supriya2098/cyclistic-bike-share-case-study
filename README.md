@@ -45,7 +45,7 @@ Identify how annual members and casual riders use Cyclistic bikes differently to
 Divvy Trip Data made available by Motivate International Inc. under the City of Chicago’s Divvy program.  
 🔗 [https://divvy-tripdata.s3.amazonaws.com/index.html](https://divvy-tripdata.s3.amazonaws.com/index.html)
 ## 💻 Interactive Dashboard (HTML)
-🔗 https://yourusername.github.io/cyclistic-bike-share-case-study/
+🔗 https://Dashboard.png/
 
 
 ## 👩‍💻 Author
