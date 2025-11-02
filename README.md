@@ -38,6 +38,8 @@ Identify how annual members and casual riders use Cyclistic bikes differently to
   - Hourly Ride Pattern  
   - Monthly Ride Trends  
 - Presentation Slides (PDF)
+## DASHBOARD
+<img width="1432" height="875" alt="DASHBOARD" src="https://github.com/user-attachments/assets/9c526ccd-e8d9-4357-bd21-f1cbe8b27ee2" />
 
 ## 🧾 Data Source
 Divvy Trip Data made available by Motivate International Inc. under the City of Chicago’s Divvy program.  
