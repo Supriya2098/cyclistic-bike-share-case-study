@@ -42,9 +42,12 @@ Identify how annual members and casual riders use Cyclistic bikes differently to
 ## 🧾 Data Source
 Divvy Trip Data made available by Motivate International Inc. under the City of Chicago’s Divvy program.  
 🔗 [https://divvy-tripdata.s3.amazonaws.com/index.html](https://divvy-tripdata.s3.amazonaws.com/index.html)
+## 💻 Interactive Dashboard (HTML)
+🔗 https://yourusername.github.io/cyclistic-bike-share-case-study/
+
 
 ## 👩‍💻 Author
 **[Supriya Kusuma]** — Data Analyst  
-📧 [mail:supriyakusuma0905@gmail.com]
-    [linkedin:https://www.linkedin.com/in/supriya-kusuma09/]
+📧 [gmail:supriyakusuma0905@gmail.com]
+ [linkedin i'd:https://www.linkedin.com/in/supriya-kusuma09/]
 
