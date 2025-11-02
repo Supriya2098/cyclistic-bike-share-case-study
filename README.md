@@ -44,6 +44,7 @@ Divvy Trip Data made available by Motivate International Inc. under the City of 
 🔗 [https://divvy-tripdata.s3.amazonaws.com/index.html](https://divvy-tripdata.s3.amazonaws.com/index.html)
 
 ## 👩‍💻 Author
-**[Your Name]** — Data Analyst  
-📧 [your email or LinkedIn link]
+**[Supriya Kusuma]** — Data Analyst  
+📧 [mail:supriyakusuma0905@gmail.com]
+    [linkedin:https://www.linkedin.com/in/supriya-kusuma09/]
 
